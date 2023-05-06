@@ -1,0 +1,21 @@
+﻿<Window x:Class="Aplikacja.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Aplikacja"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+
+        <ComboBox ItemsSource="{Binding Cities}" SelectedItem="{Binding SelectedCity}" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="27" Margin="29,37,0,0" VerticalAlignment="Top" Width="133" />
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="29,15,0,0" TextWrapping="Wrap" Text="Wybierz Swoją lokalizacje" VerticalAlignment="Top" Width="267"/>
+        <TextBlock HorizontalAlignment="Left" Height="38" Margin="676,35,0,0" TextWrapping="Wrap" Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='dd.MM.yyyy HH:mm:ss'}" VerticalAlignment="Top" Width="60"/>
+        <Button Content="Wyświetl" HorizontalAlignment="Left" Height="27" Margin="162,37,0,0" VerticalAlignment="Top" Width="70" Command="{Binding GetDataCommand}" />
+        <TextBlock HorizontalAlignment="Left" Height="331" Margin="29,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="555" Text="{Binding Data}" Name="TextBlock"/>
+
+
+    </Grid>
+</Window>
